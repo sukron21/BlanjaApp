@@ -1,0 +1,189 @@
+.card {
+  background: #ffffff;
+  box-shadow: 0px 0px 8px rgba(115, 115, 115, 0.25);
+  border-radius: 4px;
+}
+
+.container h1 {
+  font-weight: 700;
+  font-size: 34px;
+  color: #222222;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+.container h3 {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 12px;
+  color: #222222;
+  margin-bottom: 25px;
+}
+
+.container .ship-adress {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222222;
+}
+
+.card .cardSummary {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222222;
+}
+
+.price {
+  margin-top: 30px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #9b9b9b;
+}
+
+.price span {
+  margin-top: -20px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #222222;
+}
+
+.buy {
+  height: 36px;
+  width: 322px;
+  border-radius: 25px;
+  background: #db3022;
+  margin-top: 35px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  align-items: center;
+  text-align: center;
+  margin-left: 10%;
+  color: #ffffff;
+}
+
+.check {
+  height: 20px;
+  width: 20px;
+  border-radius: 4px;
+  background: #db3022;
+  margin-right: 23px;
+}
+
+.select {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222222;
+}
+
+.selected {
+  color: #9b9b9b;
+}
+
+.delete {
+  margin-top: -10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #db3022;
+  margin-left: 52%;
+  margin-top: 5px;
+}
+
+.productone img {
+  width: 103px;
+  height: 69px;
+  border-radius: 8px;
+  margin-right: 11px;
+}
+
+.productone {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.productone .brand {
+  margin-top: 20px;
+}
+
+.productone h5 {
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+}
+
+.productone .brand p {
+  font-weight: 500;
+  font-size: 12px;
+  color: #9b9b9b;
+}
+
+.productone .countProduct {
+  display: flex;
+  width: 112px;
+  justify-content: space-between;
+}
+
+.productone .circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 100%;
+  background: #d5d5d5;
+  font-size: 25px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+}
+
+.productone .sum {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222222;
+  margin-top: 16px;
+}
+
+.productone .price {
+  font-weight: 600;
+  font-size: 16px;
+  color: #222222;
+  margin-top: 20px;
+}
+
+.address h4 {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  color: #222222;
+}
+
+.address p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #222222;
+}
+
+.address .inputAddress {
+  border: 1px solid #9b9b9b;
+  border-radius: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #9b9b9b;
+  height: 36px;
+  width: 210px;
+}
+
+.inputAddress:focus,
+.inputAddress:hover,
+.inputAddress:active {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}

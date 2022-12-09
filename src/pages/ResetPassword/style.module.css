@@ -1,0 +1,21 @@
+.contents {
+  margin-top: 100px !important;
+}
+
+.title {
+  margin-top: 100px;
+}
+
+.buttons {
+  height: 45px;
+  border: 1px solid #9B9B9B;
+  background-color: #FFF;
+  color: #9B9B9B;
+}
+
+.buttonsActive {
+  height: 45px;
+  border: none;
+  background-color: #DB3022;
+  color: #FFF;
+}

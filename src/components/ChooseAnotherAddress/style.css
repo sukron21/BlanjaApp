@@ -1,0 +1,79 @@
+.w-80 {
+    width: 80%!important;
+}
+
+.button-add-new-address {
+    height: 100px;
+
+}
+
+.bana-customize {
+    background: none !important;
+    outline: none;
+    border: 5px dashed #D4D4D4 !important;
+}
+
+.button-ca {
+    background: none !important;
+    outline: none;
+    border:none;
+}
+
+.container-content {
+    border: 2px solid #F01F0E;
+}
+
+@media (max-width: 576px) {
+    .col-xs-1 {
+        flex: 0 0 auto !important;
+        width: 8.33333333% !important;
+    }
+    .col-xs-2 {
+        flex: 0 0 auto !important;
+        width: 16.66666667% !important;
+    }
+    .col-xs-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .col-xs-4 {
+        flex: 0 0 auto !important;
+        width: 33.33333333% !important;
+    }
+    .col-xs-5 {
+        flex: 0 0 auto !important;
+        width: 41.66666667% !important;
+    }
+    .col-xs-6 {
+        flex: 0 0 auto !important;
+        width: 50% !important; 
+    }
+    .col-xs-7 {
+        flex: 0 0 auto !important;
+        width: 58.33333333% !important;
+    }
+    .col-xs-8 {
+        flex: 0 0 auto !important;
+        width: 66.66666667% !important;
+    }
+    .col-xs-9 {
+        flex: 0 0 auto  !important;
+        width: 75% !important;
+    }
+    .col-xs-10 {
+        flex: 0 0 auto !important;
+        width: 83.33333333% !important;
+    }
+    .col-xs-11 {
+        flex: 0 0 auto !important;
+        width: 91.66666667% !important;
+    }
+    .col-xs-12 {
+        flex: 0 0 auto !important;
+        width: 100% !important; 
+    }
+    .button-cancel-custom, .button-submit-custom {
+        width: 100px !important;
+    }
+   }
+

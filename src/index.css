@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'metropolis';
+  src: url('../src/assets/fonts/metropolis/Metropolis-Light.otf');
+}
+
+@font-face {
+  font-family: 'metropolis-medium';
+  src: url('../src/assets/fonts/metropolis/Metropolis-Medium.otf');
+}
+
+@font-face {
+  font-family: 'metropolis-bold';
+  src: url('../src/assets/fonts/metropolis/Metropolis-Bold.otf');
+}
+
+@font-face {
+  font-family: 'metropolis-regular';
+  src: url('../src/assets/fonts/metropolis/Metropolis-Regular.otf');
+}
+
+body {
+  margin: 0;
+  font-family: 'metropolis'
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.fontBold {
+  font-family: 'metropolis-bold';
+}
+
+.fontMedium {
+  font-family: 'metropolis-medium';
+}
+
+.fontRegular {
+  font-family: 'metropolis-regular';
+}
+
+.textRedPucat {
+  color: #DB3022;
+}
+
+.bgRedPucat {
+  background-color: #DB3022;
+}
+
+.textWhiteBening {
+  color: #F9F9F9;
+}
+
+.bgBiruMyAccount {
+  background-color: #456BF3;
+}
+.bgOrenShippingAddress {
+  background-color: #F36F45;
+}
+
+.bgMerahMyOrder {
+  background-color: #F3456F;
+}

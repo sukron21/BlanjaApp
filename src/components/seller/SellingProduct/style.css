@@ -1,0 +1,4 @@
+.wrapper-invent, .wrapper-item-details, .wrapper-photo-of-goods {
+    background: linear-gradient( #f8f8f8 ,#FFFFFF );
+    box-shadow: 10px #6a6a6a;
+}
