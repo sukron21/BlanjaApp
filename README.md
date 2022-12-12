@@ -6,7 +6,7 @@
     <image align="center" width="200" src='/public/blanja_logo.png' />
   </p>
   <p align="center">
-    <a href="https://blanja-yksd.vercel.app/">View Demo</a>
+    <a href="https://blanja-yksd.vercel.app">View Demo</a>
   </p>
 </p>
 
@@ -16,6 +16,7 @@
 ## Table of Contents
 
 * [About the Project](#about-the-project)
+  * [Project Structure](#project-structure)
   * [Screenshots](#screenshots)
   * [Package Modules](#package-modules)
 * [Getting Started](#getting-started)
@@ -34,6 +35,21 @@
 Blanja is an e-commerce application where customers can find any products that is being posted by sellers and then make an order. There are 2 types of user in this application: Customer and Seller. Customers can find and buy any products, and then proceed to payment to complete the purchase. Sellers are able to see orders from customers that are buying their product and see the payment status. Sellers might also post their product from their profile and edit the products.
 
 
+### Project Structure
+```
+|── BlanjaApp
+   |── public          # Public Assets
+   |── screenshot      # Screenshots of the application
+   |── src             # Project source code
+       |── assets      # Application assets
+       |── components  # Application components
+       |── pages       # Pages source code
+       |── redux       # State management
+       |── router      # Endpoint
+   |── .env            # Environment variables   
+   |── .gitignore      # Files that should be ignored
+   |── README.md       # Readme
+```
 
 ### Screenshots
 <details>
@@ -199,6 +215,7 @@ Below are lists of modules used in this application:
 * [Bootstrap](https://getbootstrap.com/)
 * [Axios](https://axios-http.com/)
 * [Locutus](https://www.npmjs.com/package/locutus)
+* [Dotenv](https://www.npmjs.com/package/dotenv)
 * [Swiper](https://swiperjs.com/get-started)
 * [SweetAlert2](https://sweetalert2.github.io/)
 * [Socket.IO Client](https://socket.io/docs/v4/client-api/)
