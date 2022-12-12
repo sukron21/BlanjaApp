@@ -5,6 +5,9 @@
   <p align="center">
     <image align="center" width="200" src='/public/blanja_logo.png' />
   </p>
+  <p align="center">
+    <a href="https://blanja-yksd.vercel.app/">View Demo</a>
+  </p>
 </p>
 
 
@@ -14,7 +17,7 @@
 
 * [About the Project](#about-the-project)
   * [Screenshots](#screenshots)
-  * [Built With](#built-with)
+  * [Package Modules](#package-modules)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
@@ -187,12 +190,17 @@ Blanja is an e-commerce application where customers can find any products that i
 <img src="./screenshot/admin/admin_product_list.png" alt="admin list product" />
 </details>
 
-### Built With
+### Package Modules
+
+Below are lists of modules used in this application:
 
 * [React JS](https://reactjs.org/)
 * [Redux](https://redux.js.org/)
 * [Bootstrap](https://getbootstrap.com/)
 * [Axios](https://axios-http.com/)
+* [Locutus](https://www.npmjs.com/package/locutus)
+* [Swiper](https://swiperjs.com/get-started)
+* [SweetAlert2](https://sweetalert2.github.io/)
 * [Socket.IO Client](https://socket.io/docs/v4/client-api/)
 
 
@@ -235,8 +243,8 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- RELATED PROJECT -->
 ## Related Project
-Blanja RESTful API used in this application
-* [Blanja Backend](hthttps://github.com/reijiren/BlanjaAPI)
+[Blanja RESTful API](https://blanja-yakusadi.up.railway.app) used in this application.
+* [View API Documentation](hthttps://github.com/reijiren/BlanjaAPI)
 
 
 <!-- CONTACT -->
