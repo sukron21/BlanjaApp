@@ -261,7 +261,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- RELATED PROJECT -->
 ## Related Project
 [Blanja RESTful API](https://blanja-yakusadi.up.railway.app) used in this application.
-* [View API Documentation](hthttps://github.com/reijiren/BlanjaAPI)
+* [View API Documentation](https://github.com/reijiren/BlanjaAPI)
 
 
 <!-- CONTACT -->
