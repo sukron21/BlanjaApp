@@ -172,7 +172,7 @@ const MyProfileStore = () => {
                 <div className="wrapper-side-form-image col-4 col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 col-xxl-4 d-flex flex-column">
                   <div className="img-form  d-flex justify-content-center align-items-center mb-3">
                     <img
-                      src={`${process.env.REACT_APP_BACKEND_URL}/${user.image}`}
+                      src={`${user.image.split('|&&|')[0]}`}
                       alt="photo-user"
                       style={{
                         width: "100px",

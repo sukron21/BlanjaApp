@@ -341,18 +341,14 @@ const ProductEdit = () => {
                           {
                             dataProduct.photo ? dataProduct.photo.split("||").map((item, index,  arr) => (
                               arr.length-1 === index ? (
-                                // ambil data awal
-                                // index === 0 ? (
-                              <>
-                              <div className="img-review-1 d-flex justify-content-center mb-3">
-                                
+                              <div key={index} className="img-review-1 d-flex justify-content-center mb-3">
                                 <img
-                                  src={`${process.env.REACT_APP_BACKEND_URL}/${item}`}
+                                  src={`${item.split('|&&|')[0]}`}
                                   alt="sample image"
                                   style={{ height: "200px", width: "200px" }}
                                 />
                                 </div>
-                              </>) : (<></>)
+                              ) : (<></>)
                                 
                             )) : 
                             (

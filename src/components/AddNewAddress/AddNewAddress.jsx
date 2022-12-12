@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateCustomer } from "../../redux/action/user";
 
 const AddNewAddress = () => {
-  const { user, isLoading, isError } = useSelector((state) => {
+  const { user } = useSelector((state) => {
     return state.user;
   });
   const dispatch = useDispatch();

@@ -49,7 +49,7 @@ const ConfirmResetPass = () => {
     }else{
       Swal.fire({
         icon: 'error',
-        title: 'Password must be more than 6 characters',
+        title: 'Password must contain more than 6 characters',
         showConfirmButton: false,
         timer: 1800,
       });

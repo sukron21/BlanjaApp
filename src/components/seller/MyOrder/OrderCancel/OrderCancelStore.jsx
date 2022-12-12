@@ -32,21 +32,17 @@ const OrderCancelStore = () => {
       {/* head */}
       {orderUser.map((item, index) =>
         item.status === 5 ? (
-          <div className="wrapper-item-co row">
+          <div key={index} className="wrapper-item-co row">
             <div className="content-img col-2 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 d-flex align-items-center justify-content-center pt-1 pb-1">
               {item.photo ? (
                 item.photo.split("||").map((e, i, arr) =>
-                  // ambil data akhir
-                  // arr.length - 1 === index ? (
-                  // ambil data awal
                   i === 0 ? (
-                    <>
                       <div
                         key={i}
                         className="img-review-1 d-flex justify-content-center mb-3"
                       >
                         <img
-                          src={`${process.env.REACT_APP_BACKEND_URL}/${e}`}
+                          src={`${e.split('|&&|')[0]}`}
                           alt="item co"
                           style={{
                             height: "100px",
@@ -55,7 +51,6 @@ const OrderCancelStore = () => {
                           }}
                         />
                       </div>
-                    </>
                   ) : (
                     <></>
                   )
@@ -79,7 +74,7 @@ const OrderCancelStore = () => {
             </div>
             <div className="col-2 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 d-flex align-items-center justify-content-center">
               <p className={`fontBold h5`}>
-                <span>$</span> {item.price}
+                <span>Rp.</span> {item.price?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
               </p>
             </div>
             <div className="col-2 d-flex align-items-center">

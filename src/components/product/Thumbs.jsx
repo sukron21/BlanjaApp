@@ -29,7 +29,7 @@ const Thumbs = () => {
 						{details[0].map((item, index) => (
 							<div key={index}>
 								<img
-									src={`${process.env.REACT_APP_BACKEND_URL}/${item.photo}`}
+									src={`${item.photo.split('|&&|')[0]}`}
 									alt=""
 									className={`col-md-6 col-10 pe-1 mb-2 ${style.thumbs} ${style.thumbnails}`}
 								/>

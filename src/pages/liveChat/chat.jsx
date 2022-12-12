@@ -128,7 +128,7 @@ const Chat = () => {
 												className={`d-flex ${style.pointer} flex-row justify-content-between align-items-center py-2 px-3`}
 												id="chat">
 												<img
-													src={`${process.env.REACT_APP_BACKEND_URL}/${e.image}`}
+													src={`${e.image.split('|&&|')[0]}`}
 													className={`rounded-circle ${style.imgFit}`}
 													width={50}
 													height={50}
@@ -148,10 +148,6 @@ const Chat = () => {
 													<div className="mb-2">
 														{e.date_time.slice(11, 16)}
 													</div>
-													{/* <div
-														className={`${style.bgRed} ${style.chatIn} text-center text-white text-truncate`}>
-														99
-													</div> */}
 													<div></div>
 												</div>
 											</div>
@@ -168,7 +164,7 @@ const Chat = () => {
 										className={`d-flex flex-row align-items-center py-2 px-5`}>
 										<img
 											className={`${style.image}`}
-											src={`${process.env.REACT_APP_BACKEND_URL}/${receiver.image}`}
+											src={`${receiver.image?.split('|&&|')[0]}`}
 											height={45}
 											width={45}
 											alt=""
@@ -186,7 +182,7 @@ const Chat = () => {
 													<div className="d-flex align-items-end">
 														<img
 															className="rounded-circle"
-															src={`${process.env.REACT_APP_BACKEND_URL}/${e.senderimg}`}
+															src={`${e.senderimg?.split('|&&|')[0]}`}
 															width={40}
 															height={40}
 															alt=""
@@ -209,7 +205,7 @@ const Chat = () => {
 														</div>
 														<img
 															className="rounded-circle"
-															src={`${process.env.REACT_APP_BACKEND_URL}/${e.senderimg}`}
+															src={`${e.senderimg?.split('|&&|')[0]}`}
 															width={40}
 															height={40}
 															alt=""

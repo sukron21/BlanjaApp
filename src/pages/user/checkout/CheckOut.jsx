@@ -33,7 +33,6 @@ const CheckOut = () => {
       axios
         .get(`${process.env.REACT_APP_BACKEND_URL}/address/${idAddres}`)
         .then((response) => {
-          console.log(response.data);
           setDataAddres(response.data.data)
           localStorage.setItem('address', JSON.stringify(response.data.data[0]));
         })
@@ -152,7 +151,7 @@ const CheckOut = () => {
                       <div className="wrapper-item-co row">
                         <div className="content-img col-2 col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-2 col-xxl-2 d-flex align-items-center justify-content-center pt-1 pb-1">
                           <img
-                            src={`${process.env.REACT_APP_BACKEND_URL}/${item.photo.split('||')[0]}`}
+                            src={`${item.photo.split('||')[0].split('|&&|')[0]}`}
                             alt="item co"
                             style={{
                               height: "100px",
@@ -165,7 +164,7 @@ const CheckOut = () => {
                           <div className="name-item">
                             <p className={`fontBold h5`}>
                               {item.product_name} -{" "}
-                              <span className="color">{item.item_color}</span>
+                              <span className="color">{item.item_color} ({item.quantity})</span>
                             </p>
                           </div>
                           <div className="brand-item">
@@ -176,7 +175,7 @@ const CheckOut = () => {
                         </div>
                         <div className="col-2 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 d-flex align-items-center justify-content-center">
                           <p className={`fontBold h5`}>
-                            <span>$ </span>{item.quantity*item.price}{" "}{add(item.quantity * item.price)}
+                            <span>Rp. </span>{(item.quantity * item.price)?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}{" "}{add(item.quantity * item.price)}
                           </p>
                         </div>
                       </div>
@@ -199,7 +198,7 @@ const CheckOut = () => {
             <div className="summary-wrapper">
               <div className="summary-wrapper-inside m-3">
                 <div className="title mb-5">
-                  <p className={`fontBold h5`}>Shooping summary</p>
+                  <p className={`fontBold h5`}>Shopping summary</p>
                 </div>
                 <div className="order row mb-3">
                   <div className="col-8">
@@ -207,7 +206,7 @@ const CheckOut = () => {
                   </div>
                   <div className="col-4 d-flex justify-content-center align-items-center">
                     <p className={`fontBold h5`}>
-                      <span>$ </span>{total}.0
+                      <span>Rp. </span>{total?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
                     </p>
                   </div>
                 </div>
@@ -217,18 +216,18 @@ const CheckOut = () => {
                   </div>
                   <div className="col-4 d-flex justify-content-center align-items-center">
                     <p className={`fontBold h5`}>
-                      <span>$ </span>{total * 5/100}
+                      <span>Rp. </span>{(total * 5/100)?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
                     </p>
                   </div>
                 </div>
                 <div className="break-line mb-3"></div>
                 <div className="shopping-sum mb-3 row">
                   <div className="col-8">
-                    <p className={`fontBold h5`}>Shopping summary</p>
+                    <p className={`fontBold h5`}>Total</p>
                   </div>
                   <div className="col-4 d-flex justify-content-center align-items-center">
                     <p className={`fontBold textRedPucat h5`}>
-                      <span>$ </span>{total + (total * 5/100)}
+                      <span>Rp. </span>{(total + (total * 5/100))?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
                     </p>
                   </div>
                 </div>

@@ -1,10 +1,9 @@
 import React, {useEffect, useState} from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { updateOrderUser } from "../../../../redux/action/order";
 
 
 const Packed = () => {
-  const dispatch = useDispatch();
   const [orderUser, setOrderUser] = useState([]);
   const { order, isLoading } = useSelector((state) => state.order);
 
@@ -67,8 +66,8 @@ const Packed = () => {
                         className="img-review-1 d-flex justify-content-center mb-3"
                       >
                         <img
-                          src={`${process.env.REACT_APP_BACKEND_URL}/${e}`}
-                          alt="item co"
+                          src={`${e.split('|&&|')[0]}`}
+                          alt={item.product_name}
                           style={{
                             height: "100px",
                             width: "100px",
@@ -96,7 +95,7 @@ const Packed = () => {
               </div>
               <div className="col-2 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 d-flex align-items-center justify-content-center">
                 <p className={`fontBold h5`}>
-                  <span>$</span> {item.price}
+                  <span>Rp.</span> {(item.quantity * item.price)?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
                 </p>
               </div>
               <div className="col-2 d-flex align-items-center">

@@ -1,6 +1,4 @@
 import React, { useEffect } from "react";
-import menFormalSuit from "../../../../assets/images/men jacket jeans.png";
-import jacketJeans from "../../../../assets/images/men formal suit.png";
 import { Link } from "react-router-dom";
 // react-redux
 import { useSelector } from "react-redux";
@@ -52,8 +50,8 @@ const Payment = () => {
                   i === 0 ? (
                     <div key={i} className="img-review-1 d-flex justify-content-center mb-3">
                       <img
-                        src={`${process.env.REACT_APP_BACKEND_URL}/${e}`}
-                        alt="item co"
+                        src={`${e.split('|&&|')[0]}`}
+                        alt={item.product_name}
                         style={{
                           height: "100px",
                           width: "100px",
@@ -78,7 +76,7 @@ const Payment = () => {
               </div>
               <div className="col-2 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-2 col-xxl-2 d-flex align-items-center justify-content-center">
                 <p className={`fontBold h5`}>
-                  <span>$</span> {item.price}
+                  <span>Rp.</span> {(item.quantity * item.price)?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
                 </p>
               </div>
               <div className="col-2 d-flex align-items-center">

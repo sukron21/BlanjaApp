@@ -33,7 +33,7 @@ const Order = () => {
 									<div className="border p-3 d-flex flex-row rounded mb-3">
 										<div className="me-3">
 											<img
-												src={`${process.env.REACT_APP_BACKEND_URL}/${item.photo.split('||')[0]}`}
+												src={`${item.photo.split('||')[0].split('|&&|')[0]}`}
 												alt=""
 												className={`rounded ${style.productImage}`}
 											/>
@@ -41,7 +41,7 @@ const Order = () => {
 										<div className="col-4 boder-end">
 											<h4 className="fontMedium">{item.product_name}</h4>
 											<p className="text-secondary">
-												Price: ${item.price} ||
+												Price: Rp. {item.price?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')} ||
 												<span>
 													{" "}
 													Size:{" "}
@@ -68,7 +68,7 @@ const Order = () => {
 										<div className="col-4">
 											<h4 className="fontMedium">Total Price:</h4>
 											<p className="text-secondary">
-												$ {item.price * item.quantity}
+												Rp. {(item.price * item.quantity)?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
 											</p>
 										</div>
 									</div>

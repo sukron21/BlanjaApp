@@ -4,24 +4,14 @@ import logo from '../assets/images/blanja_icon.png';
 import filter from '../assets/images/filter.png';
 import style from '../assets/style/style.module.css';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 
 const Navbar = () => {
   const navigate = useNavigate();
   const [color, setColor] = useState('black');
-  const [size, setSize] = useState(true);
   const [search, setSearch] = useState('');
-  const [getProduct, setProduct] = useState([]);
-  // const nameA = JSON.parse(localStorage.setItem(''));
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    // if (search != '') {
-    //   axios.get(`${process.env.REACT_APP_BACKEND_URL}/product/search/${search}`).then((res) => {
-    //     setProduct(res.data);
-    //     return navigate(`?search=${search}`);
-    //   });
-    // }
 
     localStorage.setItem('name', JSON.stringify(search));
 
@@ -40,7 +30,6 @@ const Navbar = () => {
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            {/* <ul className="mb-2 mb-lg-0 mt-md-0 mt-2 col-md-8 col-12 navbar-nav "> */}
             <ul className={`me-auto mb-2 mb-lg-0 mt-md-0 mt-2 col-md-6 col-12`}>
               <form onSubmit={(e) => onSubmitHandler(e)} action="" className={`d-flex`} role="search">
                 <input onChange={(e) => setSearch(e.target.value)} className={`me-2 form-control col-md-10 ${style.navSearch}`} type="search" placeholder="Search" aria-label="Search" />

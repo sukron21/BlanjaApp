@@ -56,7 +56,7 @@ const OtherProduct = () => {
 								key={index}>
 								<div className={`card`}>
 									<img
-										src={`${process.env.REACT_APP_BACKEND_URL}/${item.photo.split('||')[0]}`}
+										src={`${item.photo.split('||')[0].split('|&&|')[0]}`}
 										className={`card-img-top ${style.cardsImage}`}
 										alt="..."
 									/>
@@ -66,7 +66,7 @@ const OtherProduct = () => {
 										</p>
 										<p
 											className={`fontMedium text-danger ${style.cardProductTitle} ${style.ups}`}>
-											$ {item.price}
+											Rp. {item.price?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
 										</p>
 										<p
 											className={`fontMedium text-secondary ${style.cardProductShop} ${style.ups}`}>

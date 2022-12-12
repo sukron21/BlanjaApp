@@ -45,6 +45,7 @@ const MainContentSeller = () => {
 
   const { user, isLoading, isError } = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  console.log(user)
 
   useEffect(() => {
     dispatch(getUserProduct(user.id_user))
@@ -75,7 +76,7 @@ const MainContentSeller = () => {
               <div className="d-flex flex-row">
                 <div className="image-content">
                   <img
-                    src={`${process.env.REACT_APP_BACKEND_URL}/${user.image}`}
+                    src={`${user.image.split('|&&|')[0]}`}
                     alt="avatar_user"
                     style={{
                       borderRadius: "50%",

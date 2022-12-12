@@ -92,7 +92,7 @@ const Product = () => {
 												details.photo.split("||").map((item, index) => (
 													<img
 														key={index}
-														src={`${process.env.REACT_APP_BACKEND_URL}/${item}`}
+														src={`${item.split('|&&|')[0]}`}
 														alt=""
 														className={`col-md-10 col-10 pe-1 mb-2 ${style.thumbs} ${style.thumbnails}`}
 													/>
@@ -120,7 +120,7 @@ const Product = () => {
 											<div className="my-3">
 												<p className="text-secondary">Price</p>
 												<h4 className={`fontBold ${style.ups}`}>
-													$ {details.price}
+													Rp. {details.price?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
 												</h4>
 											</div>
 											<div className="my-3">

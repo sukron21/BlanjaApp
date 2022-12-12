@@ -3,7 +3,7 @@ import logo from '../assets/images/blanja_icon.png';
 import filter from '../assets/images/filter.png';
 import notif from '../assets/images/notif.png';
 import mail from '../assets/images/mail.png';
-import card from '../assets/images/cart.png';
+import cart from '../assets/images/shopping-cart.png';
 import style from '../assets/style/style.module.css';
 import { Link, useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,6 @@ import Swal from 'sweetalert2';
 const NavbarLogin = () => {
   const location = useLocation();
   const [color, setColor] = useState("black");
-  const [size, setSize] = useState(true);
   const navigate = useNavigate();
 
   const user = useSelector((state) => state.user.user);
@@ -190,27 +189,37 @@ const NavbarLogin = () => {
             <div className={`row col-md-5 col-12 d-flex flex-row-reverse`}>
               <div className="col-md-6 col-12 mb-2 w-100 d-flex justify-content-end gap-2">
                 <div className="d-flex justify-content-center align-items-center">
-                  <img
-                    style={{ marginTop: "13px", marginLeft: "5px" }}
-                    src={card}
-                    alt=""
-                  />
+                  <Link to={'/mybag'}>
+                    <img
+                      style={{ marginTop: "13px", marginLeft: "5px" }}
+                      src={cart}
+                      width={25}
+                      height={25}
+                      alt=""
+                    />
+                  </Link>
                 </div>
                 <div className="d-flex justify-content-center align-items-center">
                   <Link>
                     <img
                       style={{ marginTop: "13px", marginLeft: "20px" }}
                       src={notif}
+                      width={25}
+                      height={25}
                       alt=""
                     />
                   </Link>
                 </div>
                 <div className="d-flex justify-content-center align-items-center">
-                  <img
-                    style={{ marginTop: "13px", marginLeft: "20px" }}
-                    src={mail}
-                    alt=""
-                  />
+                  <Link to={'/chat'}>
+                    <img
+                      style={{ marginTop: "13px", marginLeft: "20px" }}
+                      src={mail}
+                      width={25}
+                      height={25}
+                      alt=""
+                    />
+                  </Link>
                 </div>
                 <div className="d-flex justify-content-center align-items-center">
                   <Link to="/profile">
@@ -222,7 +231,7 @@ const NavbarLogin = () => {
                         marginTop: "13px",
                         marginLeft: "20px",
                       }}
-                      src={`${process.env.REACT_APP_BACKEND_URL}/${user.image}`}
+                      src={`${user.image.split('|&&|')[0]}`}
                       alt=""
                     />
                   </Link>

@@ -64,8 +64,8 @@ const MainContentCust = () => {
               <div className="d-flex flex-row">
                 <div className="image-content">
                   <img
-                    src={`${process.env.REACT_APP_BACKEND_URL}/${profilePicture}`}
-                    alt="yayaya"
+                    src={`${profilePicture.split('|&&|')[0]}`}
+                    alt={user.name}
                     style={{
                       borderRadius: "50%",
                       width: "75px",

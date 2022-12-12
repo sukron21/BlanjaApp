@@ -131,7 +131,7 @@ const SellingProduct = () => {
                   height: "50px",
                   width: "100%",
                 }}
-                placeholder="ex : 50"
+                placeholder="ex : 10000"
                 name="price"
                 onChange={handleChange}
               />

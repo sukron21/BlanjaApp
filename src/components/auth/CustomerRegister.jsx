@@ -2,7 +2,6 @@ import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import style from '../../assets/style/style.module.css';
-import axios from 'axios';
 import { register } from '../../redux/action/user';
 import Swal from 'sweetalert2';
 
@@ -31,7 +30,7 @@ const CustomerRegister = () => {
     } else if (form.password.length <= 6) {
       Swal.fire({
         icon: 'error',
-        title: 'Password must be more than 6 characters',
+        title: 'Password must contain more than 6 characters',
         showConfirmButton: false,
         timer: 1800,
       });

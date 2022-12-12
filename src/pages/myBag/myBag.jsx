@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import style from "../myBag/style.module.css";
-import jas from "../../assets/images/jas.png";
 import Navs from "../../components/Navs";
 import axios from "axios";
 import { useSelector } from "react-redux";
@@ -58,7 +57,7 @@ const MyBag = () => {
                             <div className="d-flex align-items-center">
                               <input className={style.check} type="checkbox" />
                               <img
-                                src={`${process.env.REACT_APP_BACKEND_URL}/${item.photo.split('||')[0]}`}
+                                src={`${item.photo.split('||')[0].split('|&&|')[0]}`}
                                 alt={item.product_name}
                               />
                               <div className={style.brand}>
@@ -75,8 +74,8 @@ const MyBag = () => {
                               <p className={style.sum}>({item.quantity})</p>
                               <div></div>
                             </div>
-                            <p className={style.price}>
-                              ${item.quantity * item.price} {""}{" "}
+                            <p className={style.price} style={{width: "120px"}}>
+                              Rp. {(item.quantity * item.price)?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')} {""}{" "}
                               {add(item.quantity * item.price)}
                             </p>
                           </div>
@@ -94,7 +93,7 @@ const MyBag = () => {
                 <h5 className={style.price}>
                   Total price
                   <span className="d-flex justify-content-end">
-                    $ {total}.0
+                    Rp. {total?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}
                   </span>
                 </h5>
                 <Link to="/checkout">

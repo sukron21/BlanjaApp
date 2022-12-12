@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import AddNewAddress from "../../AddNewAddress/AddNewAddress";
 import ChangeAddress from "../../ChangeAddress/ChangeAddress";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { getUserAddresses } from "../../../redux/action/address";
 import { updateCustomer } from "../../../redux/action/user";
@@ -9,7 +9,7 @@ import { updateCustomer } from "../../../redux/action/user";
 const ShippingAddress = () => {
   const navigate = useNavigate();
   const [listAddressUser, setListAddress] = useState([]);
-  const { address, isLoading, isError } = useSelector((state) => {
+  const { address } = useSelector((state) => {
     return state.address;
   });
   const { user } = useSelector((state) => state.user);
@@ -234,7 +234,7 @@ const ShippingAddress = () => {
                       <div class="collapse" id="collapseListAddress">
                         {/* data list address*/}
                         {listAddressUser.map((item, index) => (
-                          <div class="card card-body d-flex flex-row">
+                          <div key={index} class="card card-body d-flex flex-row">
                             <div className="content-wrapper-card col-6">
                               <p className="recipient_name">
                                 <span className="fontBold">No</span>:{" "}

@@ -8,12 +8,13 @@ import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const SelectPayment = () => {
-  const Total_Bayar = JSON.parse(localStorage.getItem("Pembayaran"));
-  const addres = JSON.parse(localStorage.getItem("address"));
+  const Total_Bayar = JSON.parse(localStorage.getItem("Pembayaran") || 0);
+  const addres = JSON.parse(localStorage.getItem("address") || 0);
   const [method, setMethod]=useState(null);
   const user = useSelector((state)=>state.user.user);
 
-  const handlePost = async() => {
+  const handlePost = async(e) => {
+    e.preventDefault();
     const dataOrder = JSON.parse(localStorage.getItem("order"));
     
     await dataOrder.map((e, i) => {
@@ -27,7 +28,7 @@ const SelectPayment = () => {
         id: e.id_product,
         stockProduk: e.stock,
       };
-      
+
       axios
       .post(`${process.env.REACT_APP_BACKEND_URL}/transaction`, body)
       .then((res) => {
@@ -38,6 +39,7 @@ const SelectPayment = () => {
         alert("Failed to add Transaction");
       });
     })
+    window.location.reload();
   };
 
   return (
@@ -65,7 +67,7 @@ const SelectPayment = () => {
                             <p className="fontBold h5">Payment method</p>
                           </div>
                           <div className="form-wrapper">
-                            <form onSubmit={handlePost}>
+                            <form onSubmit={(e) => handlePost(e)}>
                               <div className="payment-wrapper">
                                 <div className="payment-method-1 row mb-5">
                                   <div className="col-4 d-flex justify-content-center align-items-center">
@@ -159,7 +161,7 @@ const SelectPayment = () => {
                                   </div>
                                   <div className="col-6 text-end">
                                     <p className="fontBold h5">
-                                      $ <span>{Total_Bayar}</span>
+                                      Rp. <span>{Total_Bayar?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}</span>
                                     </p>
                                   </div>
                                 </div>
@@ -184,7 +186,7 @@ const SelectPayment = () => {
                                       <p className="fontBold h5">Shopping summary</p>  
                                     </div>
                                     <div className="total-shopping">
-                                      <p className="textRedPucat fontBold h5">$ <span>{Total_Bayar+(5/100*Total_Bayar)}</span></p>
+                                      <p className="textRedPucat fontBold h5">Rp. <span>{(Total_Bayar+(5/100*Total_Bayar))?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}</span></p>
                                     </div>
                                   </div>
                                   <div className="col-6 d-flex flex-row-reverse align-items-center">

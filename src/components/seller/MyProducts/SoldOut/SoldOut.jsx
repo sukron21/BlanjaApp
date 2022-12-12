@@ -59,9 +59,9 @@ const SoldOut = () => {
           {/* data */}
           {sProduct.map((item, index) =>
             item.stock === 0 ? (
-              <>
                 <tr
                   className="row mx-3 mt-3"
+                  key={index}
                   style={{ borderBottom: "2px solid #D4D4D4 " }}
                 >
                   <td className="col-8 text-muted">
@@ -70,9 +70,10 @@ const SoldOut = () => {
                     {item.photo ? (
                         item.photo.split("||").map(
                           (e, i, arr) => (
-                            <div className="img-review col-4 mb-5">
+                            i === 0 &&
+                            <div key={i} className="img-review col-4 mb-5">
                               <img
-                                src={`${process.env.REACT_APP_BACKEND_URL}/${e}`}
+                                src={`${e.split('|&&|')[0]}`}
                                 alt="mens formal suit"
                                 style={{ width: "100px", height: "100px" }}
                               />
@@ -85,11 +86,10 @@ const SoldOut = () => {
                     </div>
                   </td>
                   <td className="col-2 text-muted">
-                    $ <span>{item.price}</span>
+                    Rp. <span>{item.price?.toString().split('').reverse().join('').match(/.{1,3}/g).join('.').split('').reverse().join('')}</span>
                   </td>
                   <td className="col-2 text-muted">0</td>
                 </tr>
-              </>
             ) : (
               <></>
             )
