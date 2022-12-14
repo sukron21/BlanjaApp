@@ -260,7 +260,7 @@ Contributions are what make the open source community such an amazing place to b
 
 <!-- RELATED PROJECT -->
 ## Related Project
-[Blanja RESTful API](https://blanja-yakusadi.up.railway.app) used in this application.
+[Deploy APP](https://blanja-yksd.vercel.app/) used in this application.
 * [Backend](https://github.com/sukron21/BlanjaAPI)
 
 
